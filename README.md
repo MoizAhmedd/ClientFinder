@@ -2,4 +2,4 @@
 
 <p> This program uses the Google Places API, and Python to read through the stored places in google's database, and then return the name and phone-number of places that do not have a website </p>
 
-<img src = "ClientFinderImg.JPG" height = 300px width = 500px></img>
+<img src = "ClientFinderImg.JPG" width = 500px></img>
