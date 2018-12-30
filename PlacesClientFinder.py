@@ -26,7 +26,7 @@ while len(a) < 10:
     max_radius = int(input('How many meters away are you looking for place?'))
 
 
-    YOUR_API_KEY = 'AIzaSyB1vilYdjlYwchzO-oW31RS7-6fFK8EpDM'
+    YOUR_API_KEY = ' '
 
     google_places = GooglePlaces(YOUR_API_KEY)
 
