@@ -1,5 +1,7 @@
-<center><img src = "ClientFinder.jpg"></center>
-
+<p align="center">
+  </br>
+  <img src="ClientFinder.jpg"/>
+</p>
 
 # Client Finder
 <p> This program uses the Google Places API, and Python to read through the stored places in google's database, and then return the name and phone-number of places that do not have a website </p>
