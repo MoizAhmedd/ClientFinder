@@ -9,3 +9,7 @@
 <img src = "ClientFinderImg.JPG"> </img>
 
 <p> This program was created to automate the task of finding clients for a web development company. It is very time taking to have to look through all the places on google, and then find places without a website. This program automates this task </p>
+
+# Usage 
+-A user input based web app is in progress using Django
+-Expected Release = March 11th, 2019
