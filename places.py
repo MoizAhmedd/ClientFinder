@@ -1,4 +1,3 @@
-#Using Google Places API to find businesses without websites
 from googleplaces import GooglePlaces, types, lang
 
 class potclients:
