@@ -1,10 +1,14 @@
 from django.shortcuts import render
+from django.generic.views import ListView
 from django.http import HttpResponse, HttpRequest
 from googleplaces import GooglePlaces, types, lang
 from typing import Dict
 import os
 
 # Create your views here.
+class HomePageView(ListView):
+    model = None
+    template_name = 'index'
 def testView(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     print(BASE_DIR)
