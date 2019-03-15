@@ -22,7 +22,7 @@ def testfindClients(wanted_location,keywords,max_radius) -> Dict :
 
 def findClients(wanted_location,keywords,max_radius) -> Dict :
     clients = {}
-    API_KEY = ''
+    API_KEY = 'AIzaSyB1vilYdjlYwchzO-oW31RS7-6fFK8EpDM'
     google_places = GooglePlaces(API_KEY)
 
     query_result = google_places.nearby_search(
@@ -43,14 +43,22 @@ def findClients(wanted_location,keywords,max_radius) -> Dict :
 
     #This returns all locations as the values to locations, and all numbers as the values to numbers
     #I wanted it to return the key value pairs separately
-    returning = "Locations:{} | Phone Numbers:{}".format(clients.keys(),clients.values())
+    num_locations = len(clients.keys())
 
-    for client in clients:
-        b = "Location:{} | Phone Number:{}".format(client,clients[client])
+    returning = " We found "  + str(num_locations) + " locations without a website/\nLocations:{} | Phone Numbers:{}".format(clients.keys(),clients.values())
+
+
+
+    print(returning)
+
+
+    #for client in clients:
+    #    b = "Location:{} | Phone Number:{}".format(client,clients[client])
 
     return returning
 
+
 def foundClientsView(request,wanted_location,keywords,max_radius):
-    foundClients = testfindClients(wanted_location,keywords,max_radius)
+    foundClients = findClients(wanted_location,keywords,max_radius)
     response = HttpResponse(foundClients)
     return response
