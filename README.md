@@ -12,4 +12,4 @@
 
 # Usage 
 -A user input based web app is in progress using Django
--Expected Release = March 11th, 2019
+
