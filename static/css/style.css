@@ -1,0 +1,29 @@
+body{
+    background-color: #383838;
+}
+
+.header{
+    background-image: url(../img/ClientFinder.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header h1{
+    color:#ffffff00;
+    
+}
+
+.parameters{
+    display: inline-block;
+    text-align: center;
+    margin-left:35%
+}
+
+.parameters h4{
+    color:white;
+}
+
+h2{
+    color:white;
+}

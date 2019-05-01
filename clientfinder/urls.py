@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('',views.HomePageView.as_view(),name = 'home'),
     path('testView',views.testView, name = 'testview'),
-    path('foundView/<str:wanted_location>/<str:keywords>/<int:max_radius>',views.foundClientsView , name = 'clientel')
+    path('foundView/',views.foundClientsView , name = 'clientel')
 
 ]

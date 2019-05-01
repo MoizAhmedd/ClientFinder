@@ -1,14 +1,15 @@
 from django.shortcuts import render
-from django.generic.views import ListView
+from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpRequest
 from googleplaces import GooglePlaces, types, lang
 from typing import Dict
+from.models import Location
 import os
 
 # Create your views here.
-class HomePageView(ListView):
-    model = None
-    template_name = 'index'
+class HomePageView(TemplateView):
+    template_name = 'index.html'
+
 def testView(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     print(BASE_DIR)
@@ -36,9 +37,9 @@ def findClients(wanted_location,keywords,max_radius) -> Dict :
     for place in query_result.places:
         place.get_details()
 
-    if not place.website: #Checks if place does NOT have a website
-            clients[place.name] = place.local_phone_number
-            #Dict key = place name, val = place number
+        if not place.website: #Checks if place does NOT have a website
+                clients[place.name] = place.local_phone_number
+                #Dict key = place name, val = place number
 
         # Are there any additional pages of results?
     if query_result.has_next_page_token:
@@ -53,16 +54,17 @@ def findClients(wanted_location,keywords,max_radius) -> Dict :
 
 
 
-    print(returning)
-
-
     #for client in clients:
     #    b = "Location:{} | Phone Number:{}".format(client,clients[client])
 
-    return returning
+    return clients
 
 
-def foundClientsView(request,wanted_location,keywords,max_radius):
-    foundClients = findClients(wanted_location,keywords,max_radius)
-    response = HttpResponse(foundClients)
-    return response
+def foundClientsView(request):
+    wanted_location = request.GET.get('location')
+    keywords = request.GET.get('keywords')
+    max_radius = request.GET.get('radius')
+    actual_radius = int(max_radius)
+    context = findClients(wanted_location,keywords,actual_radius)
+    print(context)
+    return render(request,"result.html",context)

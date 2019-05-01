@@ -38,17 +38,10 @@
     <h1>ye</h1>
     </div>
 
-    <!--User Input-->
-    <center><h2> Enter the parameters below </h2></center>
-    <div class = "parameters">
-    <form action="{% url 'clientel' %}" method = "GET">
-        <h4>Location: <input type="text" name="location" value = {{request.GET.location}}><br></h4>
-        <h4>Keywords: <input type="text" name="keywords" value = {{request.GET.keywords}}><br></h4>
-        <h4>Radius: <input type = "text" name = "radius" value = {{request.GET.radius}}><br></h4>
-        <center><input class="btn btn-primary js-scroll-trigger" type="submit" value="Submit"></center>
-      </form>
-    </div>
-
+    <!--User Response-->
+    {% for key in context %}
+        <h1>Moiz</h1>
+    {% endfor %}
 
     <!-- Bootstrap core JavaScript -->
 
