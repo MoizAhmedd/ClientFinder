@@ -27,7 +27,7 @@ def testfindClients(wanted_location,keywords,max_radius) -> Dict :
 
 def findClients(wanted_location,keywords,max_radius) -> Dict :
     clients = {}
-    API_KEY = 'AIzaSyB1vilYdjlYwchzO-oW31RS7-6fFK8EpDM'
+    API_KEY = os.environ.get('GOOGLE_API_KEY')
     google_places = GooglePlaces(API_KEY)
 
     query_result = google_places.nearby_search(
@@ -66,5 +66,5 @@ def foundClientsView(request):
     max_radius = request.GET.get('radius')
     actual_radius = int(max_radius)
     context = findClients(wanted_location,keywords,actual_radius)
-    print(context)
-    return render(request,"result.html",context)
+    #print(context)
+    return render(request,"result.html",{'d':context})

@@ -38,14 +38,24 @@
     <h1>ye</h1>
     </div>
 
-    <!--User Response-->
-    {% for key in context %}
-        <h1>Moiz</h1>
+    <!--User Response
+    <h1>{{UrbanEdge}}</h1>
+    <h1>{{context.keys}}</h1>
+    -->
+    <div class = "response">
+    <center><h1 style="color:white;;">Results</h1></center>
+    {% for key, value in d.items %}
+        <center><h3 style="color:white;">{{key}}:{{value}}</h3></center><br>
     {% endfor %}
+  </div>
+
+  <center><a href = "{% url 'home'%}"><btn class="btn btn-primary js-scroll-trigger">Go Back</btn></a></center>
+
+
 
     <!-- Bootstrap core JavaScript -->
 
-    <script src="{ static 'vendor/bootstrap/js/bootstrap.bundle.min.js'}"></script>
+    
 
     <!-- Plugin JavaScript -->
 
