@@ -9,16 +9,15 @@
 <p> This program was created to automate the task of finding clients for a web development company. It is very time taking to have to look through all the places on google, and then find places without a website. This program automates this task </p>
 
 # Usage 
--Web App: http://moizthedeveloper.pythonanywhere.com/
-
+Web App: http://moizthedeveloper.pythonanywhere.com/
 <ul>
-  <li> Fill in the 3 parameters(Location,Keywords,Radius) <li>
+  <li> Fill in the 3 parameters(Location,Keywords,Radius) </li>
   <li> Click submit, the program will then generate locations that do not have a website, that meet your keywords and radius</li>
 </ul>
 
 # Screenshots
-<img src="ClientFinderHome.JPG"/>
-<img src="ClientFinderResults.JPG"/>
+<center><img src="ClientFinderHome.JPG"/></center>
+<center><img src="ClientFinderResults.JPG"/></center>
 
     
 
