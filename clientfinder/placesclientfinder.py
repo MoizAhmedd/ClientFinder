@@ -4,7 +4,7 @@ import os
 
 def findClients(wanted_location,keywords,max_radius) -> Dict :
     clients = {}
-    API_KEY = 'AIzaSyB1vilYdjlYwchzO-oW31RS7-6fFK8EpDM'
+    API_KEY = ''
     google_places = GooglePlaces(API_KEY)
 
     query_result = google_places.nearby_search(
